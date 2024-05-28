@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="CSS/05-rockPaper.CSS">
+</head>
+<body>
+  <center>
+    <p class="title">Rock Paper Scissors</p>
+
+    <button onclick="
+      playGame('rock');
+    " class="move-btn"> 
+      <img src="image/rock-emoji.png" alt="rock">
+     </button>
+
+    <button onclick="
+      playGame('paper');
+    " class="move-btn"> 
+      <img src="image/paper-emoji.png" alt="paper">
+    </button>
+
+    <button onclick="
+      playGame('scissors');
+    " class="move-btn">
+      <img src="image/scissors-emoji.png" alt="scissors">
+    </button>
+
+    <!-- عملت الفقترة لحتى أقدر أحطها جوا ال js عشان أقدر أحط السكور مع النص عشان هيك كمان اعطيتها كلاس -->
+    <p class="js-result  result"></p> 
+    <p class="js-choices  choices"></p>
+    <p class="js-score  score"></p>
+  
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement(); //لأنه لو ما رجعت استدعيتها ما رح يشتغل الزر
+
+      //to remove the result and choices
+      document.querySelector('.js-choices').innerHTML = null;
+      document.querySelector('.js-result').innerHTML = null;
+    " class="reset-btn"> Reset Score </button>  
+  </center>
+
+  <script src="JS/05-rockPaper.js"></script>
+</body>
+</html>
